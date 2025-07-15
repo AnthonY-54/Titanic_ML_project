@@ -2,6 +2,11 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import os
+base_path = os.path.dirname(os.path.dirname(__file__))
+model_path = os.path.join(base_path, "models", "best_model.pkl")
+bin_path = os.path.join(base_path, "models", "bin_edges.pkl")
+
 st.markdown("""
     <style>
     body {
@@ -53,10 +58,10 @@ st.markdown("""
 
 
 # Load model and bin edges
-with open("../models/best_model.pkl", "rb") as f:
+with open(model_path, "rb") as f:
     model = pickle.load(f)
 
-with open("../models/bin_edges.pkl", "rb") as f:
+with open(bin_path, "rb") as f:
     bins = pickle.load(f)
 
 st.set_page_config(
