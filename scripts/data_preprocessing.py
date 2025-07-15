@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import os
+import joblib
 
 
 def load_and_preprocess():
@@ -48,8 +49,7 @@ def load_and_preprocess():
     # Save bin edges
     file_path = os.path.join(models_dir, "bin_edges.pkl")
 
-    with open(file_path, "wb") as f:
-        pickle.dump({"age_bins": age_bins, "fare_bins": fare_bins}, f, protocol=4)
+    joblib.dump({"age_bins": age_bins, "fare_bins": fare_bins}, file_path)
 
     print("[DEBUG] Bin edges saved successfully.")
 

@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import os
+import joblib
 base_path = os.path.dirname(os.path.dirname(__file__))
 model_path = os.path.join(base_path, "models", "best_model.pkl")
 bin_path = os.path.join(base_path, "models", "bin_edges.pkl")
@@ -58,11 +59,9 @@ st.markdown("""
 
 
 # Load model and bin edges
-with open(model_path, "rb") as f:
-    model = pickle.load(f)
+model = joblib.load(model_path)
+bins = joblib.load(bin_path)
 
-with open(bin_path, "rb") as f:
-    bins = pickle.load(f)
 
 st.set_page_config(
     page_title="Titanic Survival Predictor 🚢",
