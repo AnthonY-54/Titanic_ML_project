@@ -49,7 +49,7 @@ def load_and_preprocess():
     file_path = os.path.join(models_dir, "bin_edges.pkl")
 
     with open(file_path, "wb") as f:
-        pickle.dump({"age_bins": age_bins, "fare_bins": fare_bins}, f)
+        pickle.dump({"age_bins": age_bins, "fare_bins": fare_bins}, f, protocol=4)
 
     print("[DEBUG] Bin edges saved successfully.")
 

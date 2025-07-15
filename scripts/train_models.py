@@ -46,6 +46,6 @@ os.makedirs(models_dir, exist_ok=True)
 
 # 5. Save the best model
 with open(os.path.join(models_dir, "best_model.pkl"), "wb") as f:
-    pickle.dump(best_model, f)
+    pickle.dump(best_model, f, protocol=4)
 
 print(f"\n✅ Best Model Saved: {best_model.__class__.__name__} with accuracy {round(best_score * 100, 2)}%")
