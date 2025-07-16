@@ -7,7 +7,7 @@ This is a prediction model made using machine learning and streamlit.
 
 ## 🚀 Live Demo
 
-*Coming soon on Streamlit Cloud...*
+![App Screenshot](images/titanic_ss.png)
 
 ---
 
@@ -37,3 +37,4 @@ git clone https://github.com/AnthonyY-54/Titanic_ML_project.git
 cd Titanic_ML_project
 pip install -r requirements.txt
 streamlit run scripts/app.py
+
